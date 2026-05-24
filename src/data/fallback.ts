@@ -69,16 +69,15 @@ export const fallbackSkills: Skill[] = [
   
   // Languages
   { _id: "16", name: "JavaScript", category: "Language", level: 88 },
-  { _id: "17", name: "TypeScript", category: "Language", level: 80 },
-  { _id: "18", name: "Python", category: "Language", level: 70 },
+  { _id: "17", name: "Python", category: "Language", level: 70 },
   
   // Tools
-  { _id: "19", name: "Git", category: "Tools", level: 82 },
-  { _id: "20", name: "GitHub", category: "Tools", level: 82 },
-  { _id: "21", name: "VS Code", category: "Tools", level: 90 },
-  { _id: "22", name: "Vercel", category: "Tools", level: 80 },
-  { _id: "23", name: "Postman", category: "Tools", level: 75 },
-  { _id: "24", name: "npm", category: "Tools", level: 85 },
+  { _id: "18", name: "Git", category: "Tools", level: 82 },
+  { _id: "19", name: "GitHub", category: "Tools", level: 82 },
+  { _id: "20", name: "VS Code", category: "Tools", level: 90 },
+  { _id: "21", name: "Vercel", category: "Tools", level: 80 },
+  { _id: "22", name: "Postman", category: "Tools", level: 75 },
+  { _id: "23", name: "npm", category: "Tools", level: 85 },
 ]
 
 export const fallbackExperience: Experience[] = [
