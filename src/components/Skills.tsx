@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { motion } from "framer-motion"
-import type { Skill, SkillCategory } from "../types"
+import type { SkillCategory } from "../types"
 import { fallbackSkills } from "../data/fallback"
 import GlassCard from "./ui/GlassCard"
 import SectionTitle from "./ui/SectionTitle"
