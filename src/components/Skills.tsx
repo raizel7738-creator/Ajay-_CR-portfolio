@@ -1,18 +1,15 @@
 import { useState } from "react"
 import { motion } from "framer-motion"
-import { useSanityData } from "../hooks/useSanityData"
-import { skillsQuery } from "../lib/queries"
 import type { Skill, SkillCategory } from "../types"
 import { fallbackSkills } from "../data/fallback"
 import GlassCard from "./ui/GlassCard"
 import SectionTitle from "./ui/SectionTitle"
-import SkeletonCard from "./ui/SkeletonCard"
 
 const categories: SkillCategory[] = ["All", "Frontend", "Backend", "Database", "Language", "Tools"]
 
 const Skills = () => {
-  const { data, loading } = useSanityData<Skill[]>(skillsQuery)
-  const skills = data || fallbackSkills
+  // Using hardcoded skills - no CMS needed
+  const skills = fallbackSkills
   const [active, setActive] = useState<SkillCategory>("All")
 
   const filtered = active === "All" ? skills : skills.filter((s) => s.category === active)
@@ -40,32 +37,26 @@ const Skills = () => {
         </div>
 
         {/* Skills grid */}
-        {loading ? (
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[...Array(6)].map((_, i) => <SkeletonCard key={i} />)}
-          </div>
-        ) : (
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filtered.map((skill) => (
-              <motion.div key={skill._id} initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.4 }}>
-                <GlassCard hover className="h-full">
-                  <div className="flex items-center justify-between mb-3">
-                    <h3 className="text-white font-semibold text-lg">{skill.name}</h3>
-                    <span className="px-2 py-1 bg-indigo-500/10 border border-indigo-500/30 rounded text-indigo-300 text-xs">
-                      {skill.category}
-                    </span>
-                  </div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {filtered.map((skill) => (
+            <motion.div key={skill._id} initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.4 }}>
+              <GlassCard hover className="h-full">
+                <div className="flex items-center justify-between mb-3">
+                  <h3 className="text-white font-semibold text-lg">{skill.name}</h3>
+                  <span className="px-2 py-1 bg-indigo-500/10 border border-indigo-500/30 rounded text-indigo-300 text-xs">
+                    {skill.category}
+                  </span>
+                </div>
 
-                  <div className="w-full bg-white/5 rounded-full h-2 mb-2 overflow-hidden">
-                    <motion.div initial={{ width: 0 }} whileInView={{ width: `${skill.level}%` }} viewport={{ once: true }} transition={{ duration: 1, delay: 0.2 }} className="h-full bg-gradient-to-r from-indigo-500 to-cyan-500 rounded-full" />
-                  </div>
+                <div className="w-full bg-white/5 rounded-full h-2 mb-2 overflow-hidden">
+                  <motion.div initial={{ width: 0 }} whileInView={{ width: `${skill.level}%` }} viewport={{ once: true }} transition={{ duration: 1, delay: 0.2 }} className="h-full bg-gradient-to-r from-indigo-500 to-cyan-500 rounded-full" />
+                </div>
 
-                  <p className="text-slate-400 text-sm text-right">{skill.level}%</p>
-                </GlassCard>
-              </motion.div>
-            ))}
-          </div>
-        )}
+                <p className="text-slate-400 text-sm text-right">{skill.level}%</p>
+              </GlassCard>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   )

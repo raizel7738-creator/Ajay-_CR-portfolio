@@ -46,17 +46,39 @@ export const fallbackProjects: Project[] = [
 ]
 
 export const fallbackSkills: Skill[] = [
-  { _id: "1", name: "HTML5",      category: "Frontend", level: 95 },
-  { _id: "2", name: "CSS3",       category: "Frontend", level: 90 },
-  { _id: "3", name: "JavaScript", category: "Language", level: 88 },
-  { _id: "4", name: "React.js",   category: "Frontend", level: 85 },
-  { _id: "5", name: "Bootstrap",  category: "Frontend", level: 82 },
-  { _id: "6", name: "Node.js",    category: "Backend",  level: 80 },
-  { _id: "7", name: "Express.js", category: "Backend",  level: 80 },
-  { _id: "8", name: "MongoDB",    category: "Database", level: 78 },
-  { _id: "9", name: "REST APIs",  category: "Backend",  level: 82 },
-  { _id: "10", name: "Git",       category: "Tools",    level: 78 },
-  { _id: "11", name: "VS Code",   category: "Tools",    level: 90 },
+  // Frontend
+  { _id: "1", name: "HTML5", category: "Frontend", level: 95 },
+  { _id: "2", name: "CSS3", category: "Frontend", level: 90 },
+  { _id: "3", name: "React.js", category: "Frontend", level: 85 },
+  { _id: "4", name: "Tailwind CSS", category: "Frontend", level: 85 },
+  { _id: "5", name: "Bootstrap", category: "Frontend", level: 82 },
+  { _id: "6", name: "Vite", category: "Frontend", level: 80 },
+  { _id: "7", name: "Framer Motion", category: "Frontend", level: 75 },
+  
+  // Backend
+  { _id: "8", name: "Node.js", category: "Backend", level: 80 },
+  { _id: "9", name: "Express.js", category: "Backend", level: 80 },
+  { _id: "10", name: "REST APIs", category: "Backend", level: 82 },
+  { _id: "11", name: "Socket.IO", category: "Backend", level: 78 },
+  { _id: "12", name: "JWT Authentication", category: "Backend", level: 75 },
+  
+  // Database
+  { _id: "13", name: "MongoDB", category: "Database", level: 78 },
+  { _id: "14", name: "MongoDB Atlas", category: "Database", level: 78 },
+  { _id: "15", name: "Mongoose", category: "Database", level: 75 },
+  
+  // Languages
+  { _id: "16", name: "JavaScript", category: "Language", level: 88 },
+  { _id: "17", name: "TypeScript", category: "Language", level: 80 },
+  { _id: "18", name: "Python", category: "Language", level: 70 },
+  
+  // Tools
+  { _id: "19", name: "Git", category: "Tools", level: 82 },
+  { _id: "20", name: "GitHub", category: "Tools", level: 82 },
+  { _id: "21", name: "VS Code", category: "Tools", level: 90 },
+  { _id: "22", name: "Vercel", category: "Tools", level: 80 },
+  { _id: "23", name: "Postman", category: "Tools", level: 75 },
+  { _id: "24", name: "npm", category: "Tools", level: 85 },
 ]
 
 export const fallbackExperience: Experience[] = [
