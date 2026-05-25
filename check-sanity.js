@@ -1,44 +1,43 @@
-// Check Sanity experience data
+// Check Sanity data
 import { createClient } from "@sanity/client";
 
 const client = createClient({
   projectId: "1tmex7u3",
   dataset: "production",
   apiVersion: "2024-01-01",
-  useCdn: false,
+  useCdn: true, // Using CDN like production
 });
 
-const experienceQuery = `
-  *[_type == "experience"] | order(order asc) {
+const projectsQuery = `
+  *[_type == "project"] | order(order asc) {
     _id,
-    role,
-    company,
-    duration,
+    title,
+    description,
     points,
-    type,
+    tech,
+    github,
+    live,
+    image,
+    featured,
     order
   }
 `;
 
-console.log("🔍 Fetching experience from Sanity...\n");
+console.log("🔍 Fetching projects from Sanity (with CDN)...\n");
 
 client
-  .fetch(experienceQuery)
-  .then((experiences) => {
-    console.log(`✅ Found ${experiences.length} experience entries:\n`);
-    experiences.forEach((exp, index) => {
-      console.log(`${index + 1}. ${exp.role} at ${exp.company}`);
-      console.log(`   Type: ${exp.type}`);
-      console.log(`   Order: ${exp.order}`);
-      console.log(`   Duration: ${exp.duration}`);
-      console.log(`   Points: ${exp.points?.length || 0} items`);
-      console.log("");
+  .fetch(projectsQuery)
+  .then((projects) => {
+    console.log(`✅ Found ${projects.length} projects:\n`);
+    projects.forEach((project, index) => {
+      console.log(`${index + 1}. ${project.title} (Order: ${project.order})`);
     });
     
-    if (experiences.length === 0) {
-      console.log("\n⚠️  No experience entries found in Sanity!");
+    if (projects.length === 0) {
+      console.log("\n⚠️  No projects found in Sanity!");
+      console.log("You need to add projects in Sanity Studio.");
     }
   })
   .catch((error) => {
-    console.error("❌ Error fetching experience:", error.message);
+    console.error("❌ Error fetching projects:", error.message);
   });

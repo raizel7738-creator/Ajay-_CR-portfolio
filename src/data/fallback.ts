@@ -83,14 +83,14 @@ export const fallbackSkills: Skill[] = [
 export const fallbackExperience: Experience[] = [
   {
     _id: "1",
-    role: "MERN Stack Development Intern",
+    role: "MERN Stack Developer Trainee",
     company: "GALTech School Of Technology PVT Ltd",
-    duration: "June 2024 – September 2024",
+    duration: "May 2025 – September 2025",
     points: [
-      "Completed 4-month internship in full-stack development using MongoDB, Express.js, React.js and Node.js",
+      "Completed hands-on training in full-stack development using MongoDB, Express.js, React.js and Node.js",
       "Built 3+ real-world projects including a real-time chat application with Socket.IO",
       "Worked on frontend design, REST API integration, and backend development",
-      "Gained hands-on experience with modern deployment tools like Vercel and Git workflows",
+      "Gained experience with modern deployment tools like Vercel and Git workflows",
     ],
     type: "work",
   },
