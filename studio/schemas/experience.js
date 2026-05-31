@@ -7,20 +7,20 @@ export default {
       name: "role",
       title: "Role / Degree",
       type: "string",
-      validation: (Rule: any) => Rule.required(),
+      validation: (Rule) => Rule.required(),
     },
     {
       name: "company",
       title: "Company / Institution",
       type: "string",
-      validation: (Rule: any) => Rule.required(),
+      validation: (Rule) => Rule.required(),
     },
     {
       name: "duration",
       title: "Duration",
       type: "string",
       description: "e.g. May 2025 – September 2025",
-      validation: (Rule: any) => Rule.required(),
+      validation: (Rule) => Rule.required(),
     },
     {
       name: "points",

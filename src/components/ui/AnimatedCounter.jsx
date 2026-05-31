@@ -1,15 +1,8 @@
 import { useEffect, useState, useRef } from "react"
 
-interface AnimatedCounterProps {
-  target: number
-  suffix?: string
-  prefix?: string
-  duration?: number
-}
-
-const AnimatedCounter = ({ target, suffix = "", prefix = "", duration = 1500 }: AnimatedCounterProps) => {
+const AnimatedCounter = ({ target, suffix = "", prefix = "", duration = 1500 }) => {
   const [count, setCount] = useState(0)
-  const ref = useRef<HTMLSpanElement>(null)
+  const ref = useRef(null)
   const started = useRef(false)
 
   useEffect(() => {

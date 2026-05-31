@@ -1,16 +1,14 @@
 import { useState } from "react"
 import { motion } from "framer-motion"
-import type { SkillCategory } from "../types"
 import { fallbackSkills } from "../data/fallback"
 import GlassCard from "./ui/GlassCard"
 import SectionTitle from "./ui/SectionTitle"
 
-const categories: SkillCategory[] = ["All", "Frontend", "Backend", "Database", "Language", "Tools"]
+const categories = ["All", "Frontend", "Backend", "Database", "Language", "Tools"]
 
 const Skills = () => {
-  // Using hardcoded skills - no CMS needed
   const skills = fallbackSkills
-  const [active, setActive] = useState<SkillCategory>("All")
+  const [active, setActive] = useState("All")
 
   const filtered = active === "All" ? skills : skills.filter((s) => s.category === active)
 
@@ -19,7 +17,6 @@ const Skills = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionTitle title="Skills & Technologies" subtitle="Tools and technologies I work with" centered />
 
-        {/* Filter tabs */}
         <div className="flex flex-wrap items-center justify-center gap-3 mb-12">
           {categories.map((cat) => (
             <button
@@ -36,7 +33,6 @@ const Skills = () => {
           ))}
         </div>
 
-        {/* Skills grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filtered.map((skill) => (
             <motion.div key={skill._id} initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.4 }}>

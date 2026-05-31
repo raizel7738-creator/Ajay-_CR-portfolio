@@ -1,18 +1,8 @@
 import { cn } from "../../utils/cn"
-import type { ReactNode } from "react"
-
-interface GradientButtonProps {
-  children: ReactNode
-  href?: string
-  onClick?: () => void
-  variant?: "filled" | "outline"
-  className?: string
-  disabled?: boolean
-}
 
 const GradientButton = ({
   children, href, onClick, variant = "filled", className, disabled
-}: GradientButtonProps) => {
+}) => {
   const base = "inline-flex items-center gap-2 px-6 py-3 rounded-xl font-medium text-sm transition-all duration-300 cursor-pointer"
   const filled = "bg-gradient-to-r from-indigo-500 to-cyan-500 text-white hover:opacity-90 hover:shadow-lg hover:shadow-indigo-500/25 active:scale-95"
   const outline = "border border-indigo-500/50 text-indigo-400 hover:bg-indigo-500/10 hover:border-indigo-400"

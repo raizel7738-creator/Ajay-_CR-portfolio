@@ -2,13 +2,12 @@ import { motion } from "framer-motion"
 import { Briefcase, GraduationCap } from "lucide-react"
 import { useSanityData } from "../hooks/useSanityData"
 import { experienceQuery } from "../lib/queries"
-import type { Experience as ExperienceType } from "../types"
 import { fallbackExperience } from "../data/fallback"
 import GlassCard from "./ui/GlassCard"
 import SectionTitle from "./ui/SectionTitle"
 
 const Experience = () => {
-  const { data } = useSanityData<ExperienceType[]>(experienceQuery)
+  const { data } = useSanityData(experienceQuery)
   const items = data || fallbackExperience
 
   return (
@@ -17,13 +16,11 @@ const Experience = () => {
         <SectionTitle title="Experience & Education" subtitle="My professional journey" centered />
 
         <div className="relative">
-          {/* Timeline line */}
           <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-indigo-500 via-purple-500 to-cyan-500 hidden md:block" />
 
           <div className="space-y-8">
             {items.map((item) => (
               <motion.div key={item._id} initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="relative">
-                {/* Timeline dot */}
                 <div className="absolute left-6 top-6 w-5 h-5 rounded-full bg-gradient-to-br from-indigo-500 to-cyan-500 border-4 border-surface hidden md:flex items-center justify-center">
                   {item.type === "work"
                     ? <Briefcase size={10} className="text-white" />

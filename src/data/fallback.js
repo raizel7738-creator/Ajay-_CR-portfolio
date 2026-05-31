@@ -1,6 +1,4 @@
-import type { Project, Skill, Experience } from "../types"
-
-export const fallbackProjects: Project[] = [
+export const fallbackProjects = [
   {
     _id: "1",
     title: "YouTube Clone",
@@ -45,33 +43,24 @@ export const fallbackProjects: Project[] = [
   },
 ]
 
-export const fallbackSkills: Skill[] = [
-  // Frontend
+export const fallbackSkills = [
   { _id: "1", name: "HTML5", category: "Frontend", level: 95 },
   { _id: "2", name: "CSS3", category: "Frontend", level: 90 },
   { _id: "3", name: "React.js", category: "Frontend", level: 85 },
   { _id: "4", name: "Tailwind CSS", category: "Frontend", level: 85 },
-  { _id: "5", name: "Bootstrap", category: "Frontend", level: 82 },
+  { _id: "5", name: "Bootstrap", category: "Frontend", level: 85 },
   { _id: "6", name: "Vite", category: "Frontend", level: 80 },
   { _id: "7", name: "Framer Motion", category: "Frontend", level: 75 },
-  
-  // Backend
   { _id: "8", name: "Node.js", category: "Backend", level: 80 },
   { _id: "9", name: "Express.js", category: "Backend", level: 80 },
   { _id: "10", name: "REST APIs", category: "Backend", level: 82 },
   { _id: "11", name: "Socket.IO", category: "Backend", level: 78 },
   { _id: "12", name: "JWT Authentication", category: "Backend", level: 75 },
-  
-  // Database
   { _id: "13", name: "MongoDB", category: "Database", level: 78 },
   { _id: "14", name: "MongoDB Atlas", category: "Database", level: 78 },
   { _id: "15", name: "Mongoose", category: "Database", level: 75 },
-  
-  // Languages
   { _id: "16", name: "JavaScript", category: "Language", level: 88 },
   { _id: "17", name: "Python", category: "Language", level: 70 },
-  
-  // Tools
   { _id: "18", name: "Git", category: "Tools", level: 82 },
   { _id: "19", name: "GitHub", category: "Tools", level: 82 },
   { _id: "20", name: "VS Code", category: "Tools", level: 90 },
@@ -80,7 +69,7 @@ export const fallbackSkills: Skill[] = [
   { _id: "23", name: "npm", category: "Tools", level: 85 },
 ]
 
-export const fallbackExperience: Experience[] = [
+export const fallbackExperience = [
   {
     _id: "1",
     role: "MERN Stack Developer Trainee",

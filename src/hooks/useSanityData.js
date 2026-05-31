@@ -1,20 +1,14 @@
 import { useState, useEffect } from "react"
 import { client } from "../lib/sanityClient"
 
-interface UseSanityDataResult<T> {
-  data: T | null
-  loading: boolean
-  error: string | null
-}
-
-export function useSanityData<T>(query: string): UseSanityDataResult<T> {
-  const [data, setData] = useState<T | null>(null)
+export function useSanityData(query) {
+  const [data, setData] = useState(null)
   const [loading, setLoading] = useState(true)
-  const [error, setError] = useState<string | null>(null)
+  const [error, setError] = useState(null)
 
   useEffect(() => {
     client
-      .fetch<T>(query)
+      .fetch(query)
       .then((result) => {
         setData(result)
         setLoading(false)

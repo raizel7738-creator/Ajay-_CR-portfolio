@@ -7,14 +7,14 @@ export default {
       name: "title",
       title: "Project Title",
       type: "string",
-      validation: (Rule: any) => Rule.required(),
+      validation: (Rule) => Rule.required(),
     },
     {
       name: "description",
       title: "Short Description",
       type: "text",
       rows: 3,
-      validation: (Rule: any) => Rule.required(),
+      validation: (Rule) => Rule.required(),
     },
     {
       name: "points",
@@ -34,7 +34,7 @@ export default {
       name: "github",
       title: "GitHub URL",
       type: "url",
-      validation: (Rule: any) => Rule.required(),
+      validation: (Rule) => Rule.required(),
     },
     {
       name: "live",

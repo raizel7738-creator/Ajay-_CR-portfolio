@@ -18,7 +18,6 @@ const About = () => (
       <SectionTitle title="About Me" subtitle="Get to know me better" />
 
       <div className="grid md:grid-cols-2 gap-8 items-start">
-        {/* Left — Avatar + stats */}
         <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
           <GlassCard className="text-center">
             <div className="mb-6">
@@ -42,7 +41,6 @@ const About = () => (
           </div>
         </motion.div>
 
-        {/* Right — Info */}
         <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="space-y-6">
           <p className="text-slate-300 leading-relaxed">
             A motivated and detail-oriented Frontend Developer and recent Diploma graduate

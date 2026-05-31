@@ -1,14 +1,6 @@
 import { cn } from "../../utils/cn"
-import type { ReactNode } from "react"
 
-interface GlassCardProps {
-  children: ReactNode
-  className?: string
-  hover?: boolean
-  glow?: boolean
-}
-
-const GlassCard = ({ children, className, hover = false, glow = false }: GlassCardProps) => {
+const GlassCard = ({ children, className, hover = false, glow = false }) => {
   return (
     <div
       className={cn(

@@ -1,5 +1,3 @@
-// GROQ is Sanity's query language — like SQL but for Sanity
-
 export const projectsQuery = `
   *[_type == "project"] | order(order asc) {
     _id,

@@ -1,10 +1,4 @@
-interface SectionTitleProps {
-  title: string
-  subtitle?: string
-  centered?: boolean
-}
-
-const SectionTitle = ({ title, subtitle, centered = false }: SectionTitleProps) => {
+const SectionTitle = ({ title, subtitle, centered = false }) => {
   return (
     <div className={`mb-12 ${centered ? "text-center" : ""}`}>
       <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-3">

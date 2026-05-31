@@ -35,7 +35,7 @@ const Footer = () => (
 
       <div className="border-t border-white/5 pt-6 text-center space-y-2">
         <p className="text-slate-400 text-sm">
-          Built with React + TypeScript + Tailwind CSS + Sanity CMS
+          Built with React + JavaScript + Tailwind CSS + Sanity CMS
         </p>
         <p className="text-slate-500 text-xs">
           © 2025 Ajay CR. All rights reserved.
