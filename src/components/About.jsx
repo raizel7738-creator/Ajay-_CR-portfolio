@@ -8,7 +8,7 @@ import TechBadge from "./ui/TechBadge"
 const stats = [
   { value: 3,  suffix: "+", label: "Projects Built"   },
   { value: 11, suffix: "+", label: "Technologies"     },
-  { value: 1,  suffix: "",  label: "Year Training"    },
+  { value: 5,  suffix: "",  label: "Months Training"    },
   { value: 2,  suffix: "",  label: "Languages Spoken" },
 ]
 
@@ -58,7 +58,7 @@ const About = () => (
                 <p className="text-slate-400 text-sm">
                   K. Karunakaran Memorial Model Polytechnic College, Kallettumkara
                 </p>
-                <p className="text-slate-500 text-sm">IHRD · 2023 – 2025</p>
+                <p className="text-slate-500 text-sm">IHRD · 2022 – 2025</p>
               </div>
             </div>
           </GlassCard>
