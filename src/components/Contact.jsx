@@ -12,7 +12,6 @@ const GithubIcon = () => (
 
 const contactInfo = [
   { icon: Mail,    label: "Email",    value: "ajaycr2005@gmail.com", href: "mailto:ajaycr2005@gmail.com" },
-  { icon: Phone,   label: "Phone",    value: "9778200321",           href: "tel:9778200321" },
   { icon: GithubIcon,  label: "GitHub",   value: "raizel7738-creator",   href: "https://github.com/raizel7738-creator" },
   { icon: MapPin,  label: "Location", value: "Kerala, India",        href: null },
 ]
