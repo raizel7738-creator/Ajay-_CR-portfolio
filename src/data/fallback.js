@@ -62,7 +62,6 @@ export const fallbackSkills = [
   { _id: "14", name: "MongoDB Atlas", category: "Database", level: 78 },
   { _id: "15", name: "Mongoose", category: "Database", level: 75 },
   { _id: "16", name: "JavaScript", category: "Language", level: 88 },
-  { _id: "17", name: "Python", category: "Language", level: 70 },
   { _id: "18", name: "Git", category: "Tools", level: 82 },
   { _id: "19", name: "GitHub", category: "Tools", level: 82 },
   { _id: "20", name: "VS Code", category: "Tools", level: 90 },
