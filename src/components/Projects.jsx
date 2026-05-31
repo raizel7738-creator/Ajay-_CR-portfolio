@@ -11,14 +11,27 @@ import SkeletonCard from "./ui/SkeletonCard"
 const Projects = () => {
   const { data, loading, error } = useSanityData(projectsQuery)
 
-  const projects = (data && data.length > 0) ? data : fallbackProjects
-
-  console.log('Projects data:', { data, loading, error, projects })
+  const cmsProjects = Array.isArray(data) ? data : []
+  const usingFallback = !loading && Boolean(error)
+  const projects = !loading && cmsProjects.length > 0 ? cmsProjects : usingFallback ? fallbackProjects : cmsProjects
 
   return (
     <section id="Projects" className="py-20 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionTitle title="Featured Projects" subtitle="Some of my recent work" centered />
+
+        {usingFallback && (
+          <p className="mb-8 text-center text-amber-400/90 text-sm">
+            Could not load projects from Sanity CMS — showing saved fallback content.
+            {error ? ` (${error})` : ""}
+          </p>
+        )}
+
+        {!loading && !usingFallback && cmsProjects.length === 0 && (
+          <p className="mb-8 text-center text-slate-400 text-sm">
+            No published projects in Sanity yet. Add projects in the studio and turn on &quot;Show on Portfolio&quot;.
+          </p>
+        )}
 
         {loading ? (
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">

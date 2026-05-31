@@ -154,6 +154,10 @@ npm run deploy
    - `VITE_SANITY_DATASET`
 5. Build command: `npm run build` · Output directory: `dist`
 
+Production uses a Vercel serverless function at `/api/sanity` to load CMS data server-side (avoids browser CORS blocks from Sanity).
+
+**Optional — Sanity CORS:** In [sanity.io/manage](https://www.sanity.io/manage) → your project → **API** → **CORS origins**, add your live URL (e.g. `https://your-site.vercel.app`) if you want direct browser requests instead of the proxy.
+
 ---
 
 ## Customization

@@ -1,5 +1,5 @@
 export const projectsQuery = `
-  *[_type == "project"] | order(order asc) {
+  *[_type == "project" && featured == true] | order(order asc) {
     _id,
     title,
     description,
