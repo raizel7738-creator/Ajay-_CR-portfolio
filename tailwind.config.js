@@ -9,16 +9,18 @@ export default {
       },
       colors: {
         surface: {
-          DEFAULT: "#0a0a0a",
-          card: "rgba(255,255,255,0.04)",
-          hover: "rgba(255,255,255,0.07)",
-          border: "rgba(255,255,255,0.08)",
+          DEFAULT: "#070807",
+          card: "rgba(255,255,255,0.055)",
+          hover: "rgba(255,255,255,0.09)",
+          border: "rgba(255,255,255,0.11)",
         },
         accent: {
-          DEFAULT: "#6366f1",
-          light: "#818cf8",
-          cyan: "#22d3ee",
-          glow: "rgba(99,102,241,0.3)",
+          DEFAULT: "#2dd4bf",
+          light: "#5eead4",
+          cyan: "#38bdf8",
+          glow: "rgba(45,212,191,0.24)",
+          lime: "#bef264",
+          ink: "#0f1412",
         },
       },
       animation: {

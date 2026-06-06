@@ -14,9 +14,65 @@ html {
 
 body {
   font-family: 'Inter', sans-serif;
-  background-color: #0a0a0a;
+  background:
+    radial-gradient(circle at 20% 10%, rgba(45, 212, 191, 0.12), transparent 32rem),
+    radial-gradient(circle at 85% 0%, rgba(56, 189, 248, 0.12), transparent 28rem),
+    linear-gradient(180deg, #070807 0%, #0d100f 45%, #070807 100%);
   color: white;
   overflow-x: hidden;
+}
+
+body::selection {
+  background: rgba(45, 212, 191, 0.35);
+  color: #f8fafc;
+}
+
+:focus-visible {
+  outline: 3px solid #2dd4bf;
+  outline-offset: 3px;
+}
+
+.site-shell {
+  position: relative;
+  isolation: isolate;
+}
+
+.site-shell::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), transparent 78%);
+}
+
+.site-shell::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(circle at 50% 18%, rgba(190, 242, 100, 0.08), transparent 34rem);
+}
+
+.section-panel {
+  position: relative;
+}
+
+.eyebrow {
+  color: #bef264;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.text-balance {
+  text-wrap: balance;
 }
 
 /* Custom scrollbar */
@@ -29,10 +85,21 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, #6366f1, #22d3ee);
+  background: linear-gradient(to bottom, #2dd4bf, #38bdf8);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(to bottom, #818cf8, #67e8f9);
+  background: linear-gradient(to bottom, #5eead4, #7dd3fc);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
 }

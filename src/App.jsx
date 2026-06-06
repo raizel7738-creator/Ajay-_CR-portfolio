@@ -9,14 +9,16 @@ import Footer from "./components/Footer"
 
 function App() {
   return (
-    <div className="bg-surface min-h-screen text-white">
+    <div className="site-shell bg-surface min-h-screen text-white">
       <Navbar />
-      <Hero />
-      <About />
-      <Skills />
-      <Projects />
-      <Experience />
-      <Contact />
+      <main>
+        <Hero />
+        <About />
+        <Skills />
+        <Projects />
+        <Experience />
+        <Contact />
+      </main>
       <Footer />
     </div>
   )

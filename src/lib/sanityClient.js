@@ -1,5 +1,5 @@
 import { createClient } from "@sanity/client"
-import imageUrlBuilder from "@sanity/image-url"
+import { createImageUrlBuilder } from "@sanity/image-url"
 
 const DEFAULT_PROJECT_ID = "1tmex7u3"
 const DEFAULT_DATASET = "production"
@@ -22,7 +22,7 @@ export const client = createClient({
   useCdn: import.meta.env.VITE_SANITY_USE_CDN === "true",
 })
 
-const builder = imageUrlBuilder(client)
+const builder = createImageUrlBuilder(client)
 
 export function urlFor(source) {
   return builder.image(source)

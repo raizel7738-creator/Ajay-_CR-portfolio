@@ -1,18 +1,20 @@
 import { cn } from "../../utils/cn"
 
 const GradientButton = ({
-  children, href, onClick, variant = "filled", className, disabled
+  children, href, onClick, variant = "filled", className, disabled, download
 }) => {
-  const base = "inline-flex items-center gap-2 px-6 py-3 rounded-xl font-medium text-sm transition-all duration-300 cursor-pointer"
-  const filled = "bg-gradient-to-r from-indigo-500 to-cyan-500 text-white hover:opacity-90 hover:shadow-lg hover:shadow-indigo-500/25 active:scale-95"
-  const outline = "border border-indigo-500/50 text-indigo-400 hover:bg-indigo-500/10 hover:border-indigo-400"
+  const base = "inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm transition-all duration-300 cursor-pointer"
+  const filled = "bg-accent text-accent-ink hover:bg-accent-light hover:shadow-lg hover:shadow-accent-glow active:scale-95"
+  const outline = "border border-white/15 text-white hover:bg-white/[0.08] hover:border-accent/60"
 
   if (href) {
+    const isExternal = href.startsWith("http")
     return (
       <a
         href={href}
-        target={href.startsWith("http") ? "_blank" : undefined}
-        rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
+        download={download}
+        target={isExternal ? "_blank" : undefined}
+        rel={isExternal ? "noopener noreferrer" : undefined}
         className={cn(base, variant === "filled" ? filled : outline, className)}
       >
         {children}

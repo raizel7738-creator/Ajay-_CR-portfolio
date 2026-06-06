@@ -1,10 +1,16 @@
 import { useEffect, useState } from "react"
 import { motion } from "framer-motion"
-import { Mail, Download, ArrowDown } from "lucide-react"
-import GradientButton from "./ui/GradientButton"
+import { ArrowDown, ArrowUpRight, Mail, Sparkles } from "lucide-react"
 import { Link } from "react-scroll"
+import GradientButton from "./ui/GradientButton"
 
-const titles = ["MERN Stack Developer", "React.js Developer", "Full Stack Developer", "Frontend Developer"]
+const titles = ["React interfaces", "MERN products", "REST API workflows", "real-time experiences"]
+
+const metrics = [
+  ["3+", "Projects shipped"],
+  ["11+", "Core technologies"],
+  ["5 mo", "MERN training"],
+]
 
 const Hero = () => {
   const [titleIndex, setTitleIndex] = useState(0)
@@ -13,84 +19,135 @@ const Hero = () => {
 
   useEffect(() => {
     const current = titles[titleIndex]
-    if (typing) {
-      if (displayed.length < current.length) {
-        const timeout = setTimeout(() => setDisplayed(current.slice(0, displayed.length + 1)), 80)
-        return () => clearTimeout(timeout)
-      } else {
-        const timeout = setTimeout(() => setTyping(false), 2000)
-        return () => clearTimeout(timeout)
-      }
-    } else {
-      if (displayed.length > 0) {
-        const timeout = setTimeout(() => setDisplayed(displayed.slice(0, -1)), 40)
-        return () => clearTimeout(timeout)
-      } else {
-        setTitleIndex((prev) => (prev + 1) % titles.length)
-        setTyping(true)
-      }
+    if (typing && displayed.length < current.length) {
+      const timeout = setTimeout(() => setDisplayed(current.slice(0, displayed.length + 1)), 70)
+      return () => clearTimeout(timeout)
     }
+    if (typing) {
+      const timeout = setTimeout(() => setTyping(false), 1400)
+      return () => clearTimeout(timeout)
+    }
+    if (displayed.length > 0) {
+      const timeout = setTimeout(() => setDisplayed(displayed.slice(0, -1)), 34)
+      return () => clearTimeout(timeout)
+    }
+    const timeout = setTimeout(() => {
+      setTitleIndex((prev) => (prev + 1) % titles.length)
+      setTyping(true)
+    }, 80)
+    return () => clearTimeout(timeout)
   }, [displayed, typing, titleIndex])
 
   const container = {
     hidden: {},
-    visible: { transition: { staggerChildren: 0.15 } },
+    visible: { transition: { staggerChildren: 0.12 } },
   }
   const item = {
-    hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+    hidden: { opacity: 0, y: 24 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.65, ease: "easeOut" } },
   }
 
   return (
-    <section id="Home" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-16">
-      <div className="absolute top-20 left-10 w-72 h-72 bg-indigo-500/20 rounded-full blur-3xl animate-float" />
-      <div className="absolute bottom-20 right-10 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl animate-float-delayed" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-purple-500/10 rounded-full blur-3xl" />
+    <section id="Home" className="min-h-screen relative overflow-hidden pt-24 pb-16 flex items-center">
+      <div className="absolute inset-x-6 top-24 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+      <div className="absolute left-1/2 top-20 h-72 w-72 -translate-x-1/2 rounded-full bg-accent/10 blur-3xl" />
 
-      <motion.div variants={container} initial="hidden" animate="visible" className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-        <motion.div variants={item} className="inline-flex items-center gap-2 px-4 py-2 bg-green-500/10 border border-green-500/30 rounded-full mb-6">
-          <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-          <span className="text-green-400 text-sm font-medium">
-            Available for Work
-          </span>
-        </motion.div>
+      <motion.div
+        variants={container}
+        initial="hidden"
+        animate="visible"
+        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid lg:grid-cols-[1.05fr_0.95fr] gap-12 items-center"
+      >
+        <div>
+          <motion.div variants={item} className="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-4 py-2 text-sm text-teal-100">
+            <span className="h-2 w-2 rounded-full bg-accent-lime shadow-[0_0_18px_rgba(190,242,100,0.8)]" />
+            Available for frontend and MERN roles
+          </motion.div>
 
-        <motion.h1 variants={item} className="text-5xl md:text-7xl font-display font-bold text-white mb-4">
-          Hi, I'm{" "}
-          <span className="bg-gradient-to-r from-indigo-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent">
-            Ajay CR
-          </span>
-        </motion.h1>
+          <motion.p variants={item} className="eyebrow mt-8 mb-4">Ajay CR - Kerala, India</motion.p>
 
-        <motion.div variants={item} className="text-2xl md:text-3xl font-medium text-indigo-400 mb-6 h-10">
-          {displayed}<span className="animate-blink">|</span>
-        </motion.div>
+          <motion.h1 variants={item} className="max-w-5xl text-5xl sm:text-6xl lg:text-7xl font-display font-extrabold leading-[0.95] text-white text-balance">
+            Building clean web products with sharp React craft.
+          </motion.h1>
 
-        <motion.p variants={item} className="text-slate-400 text-lg max-w-2xl mx-auto mb-8 leading-relaxed">
-          A motivated MERN Stack Developer passionate about building responsive,
-          user-centric web interfaces. I turn ideas into clean, accessible, and
-          visually polished digital experiences.
-        </motion.p>
+          <motion.div variants={item} className="mt-6 min-h-10 text-2xl md:text-3xl font-semibold text-accent">
+            I create {displayed}
+            <span className="animate-blink text-accent-lime">|</span>
+          </motion.div>
 
-        <motion.div variants={item} className="flex flex-wrap items-center justify-center gap-4 mb-8">
-          <Link to="Projects" smooth duration={500}>
-            <GradientButton variant="filled">
-              View My Projects <ArrowDown size={18} />
+          <motion.p variants={item} className="mt-6 max-w-2xl text-lg leading-8 text-zinc-300">
+            MERN Stack Developer focused on responsive interfaces, practical API integration,
+            and polished product details. I like turning rough requirements into calm,
+            usable screens that feel fast from the first click.
+          </motion.p>
+
+          <motion.div variants={item} className="mt-8 flex flex-wrap items-center gap-4">
+            <Link to="Projects" smooth duration={500}>
+              <GradientButton>
+                Explore projects <ArrowDown size={18} />
+              </GradientButton>
+            </Link>
+            <GradientButton href="mailto:ajaycr2005@gmail.com" variant="outline">
+              Start a conversation <Mail size={18} />
             </GradientButton>
-          </Link>
-          <GradientButton href="/resume.pdf" variant="outline">
-            Download Resume <Download size={18} />
-          </GradientButton>
-        </motion.div>
+          </motion.div>
 
-        <motion.div variants={item} className="flex items-center justify-center gap-4 text-slate-400 text-sm">
-          <a href="https://github.com/raizel7738-creator" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-white transition-colors">
-            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg> GitHub
-          </a>
-          |
-          <a href="mailto:ajaycr2005@gmail.com" className="flex items-center gap-2 hover:text-white transition-colors">
-            <Mail size={16} /> ajaycr2005@gmail.com
-          </a>
+          <motion.div variants={item} className="mt-8 flex flex-wrap items-center gap-5 text-sm text-zinc-400">
+            <a href="https://github.com/raizel7738-creator" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 hover:text-white transition-colors">
+              GitHub <ArrowUpRight size={15} />
+            </a>
+            <a href="mailto:ajaycr2005@gmail.com" className="inline-flex items-center gap-2 hover:text-white transition-colors">
+              ajaycr2005@gmail.com <ArrowUpRight size={15} />
+            </a>
+          </motion.div>
+        </div>
+
+        <motion.div variants={item} className="relative">
+          <div className="absolute -inset-4 rounded-[2rem] bg-gradient-to-br from-accent/20 via-transparent to-accent-cyan/20 blur-2xl" />
+          <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-[#0d1210]/90 p-5 shadow-2xl shadow-black/40">
+            <div className="flex items-center justify-between border-b border-white/10 pb-4">
+              <div className="flex gap-2">
+                <span className="h-3 w-3 rounded-full bg-red-400/80" />
+                <span className="h-3 w-3 rounded-full bg-yellow-300/80" />
+                <span className="h-3 w-3 rounded-full bg-accent/80" />
+              </div>
+              <span className="text-xs font-medium text-zinc-500">portfolio.jsx</span>
+            </div>
+
+            <div className="grid gap-4 py-6">
+              <div className="rounded-xl border border-white/10 bg-white/[0.04] p-5">
+                <div className="flex items-center gap-3">
+                  <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-accent text-2xl font-display font-extrabold text-accent-ink">
+                    AC
+                  </div>
+                  <div>
+                    <p className="text-sm text-zinc-400">Developer profile</p>
+                    <h2 className="text-2xl font-display font-bold text-white">Ajay CR</h2>
+                  </div>
+                </div>
+                <div className="mt-5 rounded-xl bg-black/30 p-4 font-mono text-sm leading-7 text-zinc-300">
+                  <p><span className="text-accent">const</span> focus = ["React", "Node", "MongoDB"]</p>
+                  <p><span className="text-accent-lime">ship</span>("responsive product UI")</p>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-3 gap-3">
+                {metrics.map(([value, label]) => (
+                  <div key={label} className="rounded-xl border border-white/10 bg-white/[0.04] p-4">
+                    <p className="text-2xl font-display font-bold text-white">{value}</p>
+                    <p className="mt-1 text-xs leading-5 text-zinc-400">{label}</p>
+                  </div>
+                ))}
+              </div>
+
+              <div className="rounded-xl border border-accent/25 bg-accent/10 p-4 text-teal-50">
+                <div className="flex items-center gap-2 font-semibold">
+                  <Sparkles size={18} />
+                  Ready to build useful, responsive experiences.
+                </div>
+              </div>
+            </div>
+          </div>
         </motion.div>
       </motion.div>
     </section>
