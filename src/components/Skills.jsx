@@ -4,13 +4,13 @@ import { fallbackSkills } from "../data/fallback"
 import GlassCard from "./ui/GlassCard"
 import SectionTitle from "./ui/SectionTitle"
 
-const categories = ["All", "Frontend", "Backend", "Database", "Language", "Tools"]
+const categories = ["All", "Frontend", "Mobile", "Backend", "Database", "Language", "Tools"]
 
 const focusAreas = [
   "Responsive React interfaces",
   "REST API integration",
   "MongoDB data modeling",
-  "Authentication flows",
+  "Flutter mobile development",
 ]
 
 const Skills = () => {
@@ -25,7 +25,7 @@ const Skills = () => {
   return (
     <section id="Skills" className="section-panel py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionTitle title="The stack I use to move from idea to shipped UI." subtitle="A focused MERN toolkit, with enough frontend polish to make real products feel deliberate." centered />
+        <SectionTitle title="The stack I use to move from idea to shipped product." subtitle="A MERN-first toolkit extended with Flutter mobile development, PHP APIs, and relational data." centered />
 
         <div className="grid lg:grid-cols-[0.8fr_1.2fr] gap-8 items-start">
           <GlassCard className="sticky top-24 hidden lg:block">

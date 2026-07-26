@@ -6,10 +6,10 @@ import AnimatedCounter from "./ui/AnimatedCounter"
 import TechBadge from "./ui/TechBadge"
 
 const stats = [
-  { value: 3, suffix: "+", label: "Project builds" },
-  { value: 11, suffix: "+", label: "Technologies" },
+  { value: 4, suffix: "+", label: "Project builds" },
+  { value: 15, suffix: "+", label: "Technologies" },
   { value: 5, suffix: "", label: "Months training" },
-  { value: 2, suffix: "", label: "Languages" },
+  { value: 3, suffix: "", label: "Languages" },
 ]
 
 const About = () => (
@@ -25,11 +25,11 @@ const About = () => (
                 AC
               </div>
               <div>
-                <p className="text-zinc-400 text-sm">MERN Stack Developer</p>
+                <p className="text-zinc-400 text-sm">Full-Stack Developer | MERN & Flutter</p>
                 <h3 className="mt-1 text-3xl font-display font-bold text-white">Ajay CR</h3>
                 <p className="mt-3 text-zinc-300 leading-7">
-                  Recent Computer Engineering diploma graduate building with React,
-                  JavaScript, Node.js, Express, MongoDB, and Tailwind CSS.
+                  Recent Computer Engineering diploma graduate building MERN web products
+                  and Flutter mobile apps backed by REST APIs, PHP, and MySQL.
                 </p>
               </div>
             </div>

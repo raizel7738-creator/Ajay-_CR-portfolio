@@ -4,11 +4,11 @@ import { ArrowDown, ArrowUpRight, Mail, Sparkles } from "lucide-react"
 import { Link } from "react-scroll"
 import GradientButton from "./ui/GradientButton"
 
-const titles = ["React interfaces", "MERN products", "REST API workflows", "real-time experiences"]
+const titles = ["React interfaces", "MERN products", "Flutter mobile apps", "REST API workflows"]
 
 const metrics = [
-  ["3+", "Projects shipped"],
-  ["11+", "Core technologies"],
+  ["4+", "Projects shipped"],
+  ["15+", "Core technologies"],
   ["5 mo", "MERN training"],
 ]
 
@@ -61,13 +61,13 @@ const Hero = () => {
         <div>
           <motion.div variants={item} className="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-4 py-2 text-sm text-teal-100">
             <span className="h-2 w-2 rounded-full bg-accent-lime shadow-[0_0_18px_rgba(190,242,100,0.8)]" />
-            Available for frontend and MERN roles
+            Available for frontend, MERN, and Flutter opportunities
           </motion.div>
 
           <motion.p variants={item} className="eyebrow mt-8 mb-4">Ajay CR - Kerala, India</motion.p>
 
           <motion.h1 variants={item} className="max-w-5xl text-5xl sm:text-6xl lg:text-7xl font-display font-extrabold leading-[0.95] text-white text-balance">
-            Building clean web products with sharp React craft.
+            Full-Stack Developer | MERN & Flutter
           </motion.h1>
 
           <motion.div variants={item} className="mt-6 min-h-10 text-2xl md:text-3xl font-semibold text-accent">
@@ -76,9 +76,9 @@ const Hero = () => {
           </motion.div>
 
           <motion.p variants={item} className="mt-6 max-w-2xl text-lg leading-8 text-zinc-300">
-            MERN Stack Developer focused on responsive interfaces, practical API integration,
-            and polished product details. I like turning rough requirements into calm,
-            usable screens that feel fast from the first click.
+            MERN-focused Full-Stack Developer building responsive web products and Flutter
+            mobile applications. I turn practical requirements into polished interfaces,
+            reliable APIs, and useful experiences across web and mobile.
           </motion.p>
 
           <motion.div variants={item} className="mt-8 flex flex-wrap items-center gap-4">
@@ -126,8 +126,8 @@ const Hero = () => {
                   </div>
                 </div>
                 <div className="mt-5 rounded-xl bg-black/30 p-4 font-mono text-sm leading-7 text-zinc-300">
-                  <p><span className="text-accent">const</span> focus = ["React", "Node", "MongoDB"]</p>
-                  <p><span className="text-accent-lime">ship</span>("responsive product UI")</p>
+                  <p><span className="text-accent">const</span> focus = ["MERN", "Flutter", "REST APIs"]</p>
+                  <p><span className="text-accent-lime">ship</span>("web and mobile products")</p>
                 </div>
               </div>
 
