@@ -43,6 +43,20 @@ export const fallbackProjects = [
     featured: true,
     order: 3,
   },
+  {
+    _id: "4",
+    title: "Task Manager App",
+    description: "A full-stack Task Manager mobile app built with Flutter (Dart) as the frontend and PHP with MySQL as the backend. Features user registration, login with bcrypt password hashing, add tasks with priority levels (High/Medium/Low), mark tasks as complete, and delete tasks. Flutter communicates with a PHP REST API using HTTP methods (GET, POST, PUT, DELETE) and JSON.",
+    points: [
+      "User registration and secure login with bcrypt password hashing",
+      "Task creation with High, Medium, and Low priority levels",
+      "Complete and delete task workflows powered by a PHP REST API",
+    ],
+    tech: ["Flutter", "Dart", "PHP", "MySQL", "REST API", "PDO"],
+    github: "https://github.com/raizel7738-creator/taskmanager-flutter",
+    featured: true,
+    order: 4,
+  },
 ]
 
 export const fallbackSkills = [
