@@ -19,7 +19,11 @@ const Projects = () => {
 
   const cmsProjects = Array.isArray(data) ? data : []
   const usingFallback = !loading && Boolean(error)
-  const projects = !loading && cmsProjects.length > 0 ? cmsProjects : usingFallback ? fallbackProjects : cmsProjects
+  const projectsFromSource = !loading && cmsProjects.length > 0 ? cmsProjects : usingFallback ? fallbackProjects : cmsProjects
+  const taskManagerProject = fallbackProjects.find((project) => project.github === "https://github.com/raizel7738-creator/taskmanager-flutter")
+  const projects = taskManagerProject && !projectsFromSource.some((project) => project.github === taskManagerProject.github)
+    ? [...projectsFromSource, taskManagerProject]
+    : projectsFromSource
 
   return (
     <section id="Projects" className="section-panel py-20">
